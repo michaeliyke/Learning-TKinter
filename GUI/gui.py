@@ -1,9 +1,18 @@
-from tkinter import Tk, Label
+from tkinter import Tk, Label, StringVar, RAISED
 
 root = Tk()
 root.title("First GUI application")
-	
-x = Label(root, text="Hello World!", font=("jost", 30))
+txtVar = StringVar()
+x = Label(
+	root, 
+	textvariable=txtVar,
+	relief=RAISED,
+	fg="indigo" ,
+	bg="silver",
+	font=("jost", 30, "bold")
+	)
+
+txtVar.set("Welcome to TKinter Framework!")
 # x.grid()
 x.pack()
 
