@@ -1,37 +1,43 @@
-from tkinter import Tk, Label, StringVar, RAISED, Button, LEFT
-
-
-def count1():
-	global counter
-	counter += 1
-	label.config(text=str(counter))
-	label.after(1000, count1)
-
-def count(label):
-	counter = 0
-	count1()
+from tkinter import Tk, Frame, Label, Button, LEFT, RIGHT
 
 
 root = Tk()
-root.title("Counting seconds")
-label = Label(
-	root, 
-	fg="blue",
-	font=("jost", 25)
-)
-label.pack()
+root.title("Window")
+root.geometry("300x300")
+frame = Frame(root)
+frame.pack()
 
-counter = 0
+left = Frame(root)
+left.pack(side=LEFT)
+right = Frame(root)
+right.pack(side=RIGHT)
 
-count(label)
-btn = Button(
-	root, 
-	text="stop", 
-	width=25, 
-	command=root.destroy, 
+btnA = Button(
+	frame, 
+	fg="red",
+	activebackground="crimson",
+	text="Submit", 
 	font=("jost", 14, "bold")
 	)
-btn.pack()
+btnA.pack(side=LEFT)
+
+btnB = Button(
+	frame, 
+	fg="green",
+	activebackground="green",
+	text="Remove", 
+	font=("jost", 14, "bold")
+	)
+btnB.pack(side=RIGHT)
+
+btnC = Button(
+	frame, 
+	fg="black",
+	activebackground="#ABCABC",
+	text="Add", 
+	font=("jost", 14, "bold")
+	)
+btnC.pack(side=LEFT)
 
 
 root.mainloop()
