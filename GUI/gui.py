@@ -1,43 +1,13 @@
-from tkinter import Tk, Frame, Label, Button, LEFT, RIGHT
+from tkinter import Tk, Frame, Label, Button, LEFT, RIGHT, IntVar, Checkbutton, W
 
 
 root = Tk()
 root.title("Window")
 root.geometry("300x300")
-frame = Frame(root)
-frame.pack()
+var1 = IntVar()
+var2 = IntVar()
 
-left = Frame(root)
-left.pack(side=LEFT)
-right = Frame(root)
-right.pack(side=RIGHT)
-
-btnA = Button(
-	frame, 
-	fg="red",
-	activebackground="crimson",
-	text="Submit", 
-	font=("jost", 14, "bold")
-	)
-btnA.pack(side=LEFT)
-
-btnB = Button(
-	frame, 
-	fg="green",
-	activebackground="green",
-	text="Remove", 
-	font=("jost", 14, "bold")
-	)
-btnB.pack(side=RIGHT)
-
-btnC = Button(
-	frame, 
-	fg="black",
-	activebackground="#ABCABC",
-	text="Add", 
-	font=("jost", 14, "bold")
-	)
-btnC.pack(side=LEFT)
-
+Checkbutton(root, text="Male", variable=var1).grid(row=0, sticky=W)
+Checkbutton(root, text="Female", variable=var2).grid(row=1, sticky=W)
 
 root.mainloop()
