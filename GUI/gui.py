@@ -1,13 +1,24 @@
-from tkinter import Tk, Frame, Label, Button, LEFT, RIGHT, IntVar, Checkbutton, W
+from tkinter import Tk, IntVar, Radiobutton
 
 
-root = Tk()
-root.title("Window")
-root.geometry("300x300")
-var1 = IntVar()
-var2 = IntVar()
+app = Tk()
+app.title("Window")
+app.geometry("600x500")
+radioInt = IntVar()
 
-Checkbutton(root, text="Male", variable=var1).grid(row=0, sticky=W)
-Checkbutton(root, text="Female", variable=var2).grid(row=1, sticky=W)
+# Gender: Male or Female, Non-binary, 
+# Month Joined: Jan - December
+# User Type: Member or Guest
+# Email settings: Weekly, Daily, Monthly Round-up
 
-root.mainloop()
+
+radio1 = Radiobutton(app, text="January", variable=radioInt, value=1)
+radio2 = Radiobutton(app, text="February", variable=radioInt, value=2)
+radio3 = Radiobutton(app, text="March", variable=radioInt, value=3)
+radio4 = Radiobutton(app, text="April", variable=radioInt, value=4)
+radio1.grid(column=0, row=0)
+radio2.grid(column=0, row=1)
+radio3.grid(column=0, row=2)
+radio4.grid(column=0, row=3)
+
+app.mainloop()
