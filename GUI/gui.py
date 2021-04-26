@@ -1,21 +1,13 @@
-from tkinter import Tk, Label, Entry
+from tkinter import Tk, Label, StringVar, OptionMenu
 
 
 app = Tk()
 app.title("Window")
 app.geometry("600x500")
+variable = StringVar(app)
+variable.set("May be")
 
-# Gender: Male or Female, Non-binary, 
-# Month Joined: Jan - December
-# User Type: Member or Guest
-# Email settings: Weekly, Daily, Monthly Round-up
-
-Label(app, text="Email Address", font=("jost", 15)).grid(row=0)
-Label(app, text="User password", font=("jost", 15)).grid(row=1)
-
-email = Entry(app)
-email.grid(row=0, column=1)
-password = Entry(app)
-password.grid(row=1, column=1)
+options = OptionMenu(app, variable, "Yes", "No", "Not sure", "May be")
+options.pack()
 
 app.mainloop()
