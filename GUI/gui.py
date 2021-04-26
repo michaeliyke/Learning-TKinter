@@ -1,36 +1,19 @@
-from tkinter import Tk, Label, X, Y, LEFT, RIDGE, SUNKEN, Entry
+from tkinter import Tk, Label, X, Y, LEFT, RIDGE, SUNKEN, Entry, Button
 
 
 app = Tk()
 app.title("Window")
-app.geometry("600x500")
-font=("roboto", 16)
+app.geometry("450x400")
+font=("Tahoma", 16)
 
-Label(
-	app, 
-	text="SEVEN COLORS OF THE RAINBOW", 
-	bg="#abcabc",
-	fg="#fff",
-	font=("impact", 20)
-	).grid()
+Label(app, text="Maths").place(x=100, y=20)
+Entry(app, bd=5).place(x=160, y=20)
 
-rowIndex = 1
-for color in ("Red", "Orange", "Yellow", "Green", "Blue", "Indigo", "Violet"):
-	Label(
-		app, 
-		text=color , 
-		width=20,
-		relief=RIDGE, 
-		font=font
-		).grid(row=rowIndex, column=0)
+Label(app, text="Bio").place(x=100, y=55)
+Entry(app, bd=4).place(x=160, y=50)
 
-	Entry(
-		app,
-		bg=color,
-		relief=SUNKEN, 
-		width=10,
-		).grid(row=rowIndex, column=1)
+Label(app, text="Total").place(x=100, y=160)
+Entry(app, bd=5).place(x=160, y=160)
 
-	rowIndex += 1
-
+Button(app, text="Add").place(x=200, y=100)
 app.mainloop()
