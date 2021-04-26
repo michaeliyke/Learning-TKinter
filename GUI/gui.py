@@ -1,4 +1,4 @@
-from tkinter import Tk, Label, X, Y, LEFT
+from tkinter import Tk, Label, X, Y, LEFT, RIDGE, SUNKEN, Entry
 
 
 app = Tk()
@@ -8,28 +8,29 @@ font=("roboto", 16)
 
 Label(
 	app, 
-	text="Favourite Languages", 
+	text="SEVEN COLORS OF THE RAINBOW", 
 	bg="#abcabc",
 	fg="#fff",
 	font=("impact", 20)
-	).pack(fill=X)
-i = 0
-for lang in ("C", "C++", "Java", "Python", "JavaScript", "PHP"):
-	Label(
-		app, 
-		text=lang , 
-		bg="#000", 
-		fg="#ebebeb", 
-		font=font
-		).pack(fill=X, pady=5, padx=12)
+	).grid()
 
-for lang in ("Ruby", "Perl", "Cobol", "Lisp", "Assembly"):
+rowIndex = 1
+for color in ("Red", "Orange", "Yellow", "Green", "Blue", "Indigo", "Violet"):
 	Label(
 		app, 
-		text=lang,
-		bg="#777",
-		fg="orange",
-		font=("cursive", 12)
-		).pack(padx=4, side=LEFT)
+		text=color , 
+		width=20,
+		relief=RIDGE, 
+		font=font
+		).grid(row=rowIndex, column=0)
+
+	Entry(
+		app,
+		bg=color,
+		relief=SUNKEN, 
+		width=10,
+		).grid(row=rowIndex, column=1)
+
+	rowIndex += 1
 
 app.mainloop()
